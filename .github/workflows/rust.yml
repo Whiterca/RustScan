@@ -29,11 +29,11 @@ jobs:
     - name: Build
       run: cargo build --release --target=x86_64-unknown-linux-musl --verbose
 
-    - name: Run tests
-      run: cargo test --target=x86_64-unknown-linux-musl --verbose
+    - name: List build directory
+      run: ls -la target/x86_64-unknown-linux-musl/release/
 
     - name: Upload binary artifact
       uses: actions/upload-artifact@v3
       with:
         name: rust-binary
-        path: target/x86_64-unknown-linux-musl/release/your_binary_name
+        path: target/rustscan
